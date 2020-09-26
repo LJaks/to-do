@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
-import todosData from "./todosData";
-import TodoItem from "./TodoItem";
+import todosData from "../../todosData";
+import TodoItem from "../todoItem/TodoItem";
 
 class App extends React.Component {
   constructor() {
