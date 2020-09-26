@@ -1,0 +1,5 @@
+.CompletedStyle {
+    font-style: "italic";
+    color: "#cdcdcd";
+    text-decoration: "line-through";
+}
