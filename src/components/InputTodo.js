@@ -4,7 +4,7 @@ class InputTodo extends React.Component {
   state = {
     title: "",
   };
-  onChange = e => {
+  onChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
     });
@@ -14,24 +14,26 @@ class InputTodo extends React.Component {
     if (this.state.title === "") return;
     this.props.addTodoProps(this.state.title);
     this.setState({
-      title: ""
-    })
+      title: "",
+    });
   };
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit} className="form-container">
-        <input
-          type="text"
-          placeholder="Add To-do item"
-          value={this.state.title}
-          name="title"
-          className="input-text"
-          onChange={this.onChange}
+      <div>
+        <form onSubmit={this.handleSubmit} className="form-container">
+          <input
+            type="text"
+            placeholder="Add To-do item"
+            value={this.state.title}
+            name="title"
+            className="input-text"
+            onChange={this.onChange}
           />
-        <input type="submit" className="input-submit" value="Enter" />
-      </form>
-    )
+          <input type="submit" className="input-submit" value="Enter" />
+        </form>
+      </div>
+    );
   }
 }
 export default InputTodo;

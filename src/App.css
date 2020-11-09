@@ -4,31 +4,27 @@
   padding: 0;
 }
 body {
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family: "Open Sans", "Segoe UI", Arial, sans-serif;
   line-height: 1.4;
   color: #1f1f1f;
   background-color: whitesmoke;
 }
 .container {
   background-color: white;
-  margin: auto;
-  width: 50%;
-  min-width: 280px;
+  margin: 10px auto;
+  width: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
   border: 1px solid #efefef;
-  box-shadow:
-      0 1px 1px rgba(0,0,0,0.15),
-      0 10px 0 -5px #eee,
-      0 10px 1px -4px rgba(0,0,0,0.15),
-      0 20px 0 -10px #eee,
-      0 20px 1px -9px rgba(0,0,0,0.15);
-      padding: 30px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 10px 0 -5px #eee,
+    0 10px 1px -4px rgba(0, 0, 0, 0.15), 0 20px 0 -10px #eee,
+    0 20px 1px -9px rgba(0, 0, 0, 0.15);
+  padding: 30px;
 }
 .form-container {
   display: flex;
-  width: auto;
+  width: 100%;
   padding: 17px 0px;
 }
 .input-text {
@@ -43,9 +39,9 @@ body {
 }
 .input-text:hover {
   border-color: #1f1f1f;
-} 
+}
 .input-text::placeholder {
-  color:#7c7c7c;
+  color: #7c7c7c;
   opacity: 0.8;
 }
 .input-submit {
@@ -62,20 +58,29 @@ body {
   width: 20%;
   outline: none;
 }
-.input-submit:hover{
+.input-submit:hover {
   background-color: #1f1f1f;
   color: #14b484;
 }
 .todo-item {
+  display: flex;
+  justify-content: space-between;
   list-style-type: none;
-  padding: 17px 0px;
+  padding: 17px 5px;
   border-bottom: 1px solid #eaeaea;
+  flex-grow: 1;
+  justify-items: center;
+  align-items: center;
+  width: 400px;
 }
-.todo-item input {
-  margin-right: 15px;
+.checkbox {
   border-color: #eaeaea;
+  margin-right: 10px;
 }
-.todo-item button {
+span {
+  flex-grow: 1;
+}
+button {
   background: #14b484;
   color: #fff;
   border: 1px solid #14b484;
@@ -86,20 +91,77 @@ body {
   float: right;
   outline: none;
 }
+.alert {
+  margin-bottom: 1rem;
+  min-width: 300px;
+  height: 1.25rem;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.7rem;
+  border-radius: 0.25rem;
+  letter-spacing: 0.1rem;
+  text-transform: capitalize;
+}
+.alert-danger {
+  color: #721c24;
+  background: #f8d7da;
+}
+.alert-success {
+  color: #155724;
+  background: #d4edda;
+}
 @media screen and (max-width: 375px) {
   html {
     width: 100%;
   }
+  header {
+    padding-bottom: 5px !important;
+  }
+  h1,
+  p {
+    font-size: 15px !important;
+    line-height: 1rem;
+    margin-bottom: 10px !important;
+  }
   .container {
-    font-size: 60%
+    font-size: 60%;
+    max-width: 300px;
+    padding: 5px;
+  }
+  .todo-item {
+    padding: 5px;
+    max-width: 250px;
+  }
+  span {
+    max-width: 250px;
+    word-break: break-all;
+  }
+  .alert,
+  .alert-danger,
+  .alert-success {
+    top: 10px;
+    font-size: 10px !important;
+  }
+  button {
+    font-size: 80%;
+    padding: 2px;
+    width: 15px;
+    height: 15px;
   }
   .form-container {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+  .input-text,
   .input-submit {
     width: auto;
+    margin-bottom: 5px;
     margin-left: 0;
+    padding: 6px;
+    font-size: 80%;
   }
 }
