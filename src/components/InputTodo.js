@@ -11,7 +11,9 @@ class InputTodo extends React.Component {
   };
   handleSubmit = (e) => {
     e.preventDefault();
-    if (this.state.title === "") return;
+    if (this.state.title === "") {
+      return this.props.emptyAlert(true, "danger", "please add name");
+    }
     this.props.addTodoProps(this.state.title);
     this.setState({
       title: "",
