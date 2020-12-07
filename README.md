@@ -3,9 +3,9 @@
 <table>
 <tr>
 <td>
-  A simple to-do list app built using React.Js library. There user can add new to-dos, strike them out or delete each to-do.
+  A simple to-do list app built using React.Js library. There user can add new to-dos/ strike them out as done/ edit or delete each to-do.
   
-  There are also alert messages showing notifications if to-do is added or removed from the list.
+  There are also alert messages showing notifications if to-do is added, edited or removed from the list.
 
 </td>
 </tr>
