@@ -4,6 +4,7 @@ import TodoItem from "./TodoItem";
 import InputTodo from "./InputTodo";
 import Alert from "./Alert";
 import Header from "./Header";
+import FlipMove from "react-flip-move";
 
 class TodoContainer extends React.Component {
   state = {
@@ -35,6 +36,22 @@ class TodoContainer extends React.Component {
       ],
     });
   };
+  editTodo = (title, id) => {
+    this.setState({
+      todos: this.state.todos.map((todo) => {
+        if (todo.id === id) {
+          console.log(todo.title, title);
+          todo.title = title;
+          if (title !== "") {
+            this.showAlert(true, "success", "item edited");
+          } else {
+            this.showAlert(true, "danger", "please add item's name");
+          }
+        }
+        return todo;
+      }),
+    });
+  };
 
   addTodoItem = (title) => {
     this.showAlert(true, "success", "item added to the list");
@@ -56,16 +73,22 @@ class TodoContainer extends React.Component {
         )}
         <Header todosLength={this.state.todos.length} />
         <div className="todo-list">
-          {this.state.todos.map((todo) => (
-            <TodoItem
-              key={todo.id}
-              todo={todo}
-              handleChangeProps={this.handleChange}
-              deleteTodoProps={this.delTodo}
-            />
-          ))}
+          <FlipMove duration={300} easing={"ease-in-out"}>
+            {this.state.todos.map((todo) => (
+              <TodoItem
+                key={todo.id}
+                todo={todo}
+                handleChangeProps={this.handleChange}
+                deleteTodoProps={this.delTodo}
+                editTodoProps={this.editTodo}
+              />
+            ))}
+          </FlipMove>
         </div>
-        <InputTodo addTodoProps={this.addTodoItem} emptyAlert={this.showAlert} />
+        <InputTodo
+          addTodoProps={this.addTodoItem}
+          emptyAlert={this.showAlert}
+        />
       </div>
     );
   }

@@ -80,6 +80,16 @@ body {
 span {
   flex-grow: 1;
 }
+span input {
+  display: flex;
+  width: 100%;
+  background-color: transparent;
+  border: 0px;
+  font-size: 14px;
+}
+span input:focus {
+  outline: none;
+}
 button {
   background: #14b484;
   color: #fff;
