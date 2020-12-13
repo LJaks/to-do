@@ -15,7 +15,7 @@
 
 ## Website
 
-Here is a working [To Do List](https://laura.jaks.info/to-do/).
+Here is a working [To Do List](https://laura.jaks.info/to-do-list/).
 
 ## Built with
 
